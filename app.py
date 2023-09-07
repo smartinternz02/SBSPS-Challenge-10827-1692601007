@@ -1,4 +1,3 @@
-import argparse
 import cv2
 from flask import Flask, render_template, request, redirect, send_file, url_for, Response
 from werkzeug.utils import secure_filename, send_from_directory
@@ -108,7 +107,4 @@ def video_feed():
                     mimetype='multipart/x-mixed-replace; boundary=frame')
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Flask App Implementing YOLOv8 Detection Model")
-    parser.add_argument("--port", default=5000, type=int, help="port_number")
-    args = parser.parse_args()
     app.run(debug=False, port=5000)
